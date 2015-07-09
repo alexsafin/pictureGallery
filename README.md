@@ -1,1 +1,1 @@
-# pictureGallery
+# simple pictureGallery project

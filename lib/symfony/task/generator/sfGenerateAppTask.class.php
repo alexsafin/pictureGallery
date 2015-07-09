@@ -65,7 +65,7 @@ This task also creates two front controller scripts in the
   [web/%application%_dev.php|INFO] for the development environment
 
 For the first application, the production environment script is named
-[index.php|COMMENT].
+[uploadFiles.php|COMMENT].
 
 If an application with the same name already exists,
 it throws a [sfCommandException|COMMENT].
@@ -106,9 +106,9 @@ EOF;
     $finder = sfFinder::type('any')->discard('.sf');
     $this->getFilesystem()->mirror(dirname(__FILE__).'/skeleton/app/app', $appDir, $finder);
 
-    // Create $app.php or index.php if it is our first app
+    // Create $app.php or uploadFiles.php if it is our first app
     $indexName = 'index';
-    $firstApp = !file_exists(sfConfig::get('sf_web_dir').'/index.php');
+    $firstApp = !file_exists(sfConfig::get('sf_web_dir').'/uploadFiles.php');
     if (!$firstApp)
     {
       $indexName = $app;
@@ -127,8 +127,8 @@ EOF;
       'ESCAPING_STRATEGY' => sfYamlInline::dump((boolean) sfYamlInline::parseScalar($options['escaping-strategy'])),
     ));
 
-    $this->getFilesystem()->copy(dirname(__FILE__).'/skeleton/app/web/index.php', sfConfig::get('sf_web_dir').'/'.$indexName.'.php');
-    $this->getFilesystem()->copy(dirname(__FILE__).'/skeleton/app/web/index.php', sfConfig::get('sf_web_dir').'/'.$app.'_dev.php');
+    $this->getFilesystem()->copy(dirname(__FILE__).'/skeleton/app/web/uploadFiles.php', sfConfig::get('sf_web_dir').'/'.$indexName.'.php');
+    $this->getFilesystem()->copy(dirname(__FILE__).'/skeleton/app/web/uploadFiles.php', sfConfig::get('sf_web_dir').'/'.$app.'_dev.php');
 
     $this->getFilesystem()->replaceTokens(sfConfig::get('sf_web_dir').'/'.$indexName.'.php', '##', '##', array(
       'APP_NAME'    => $app,

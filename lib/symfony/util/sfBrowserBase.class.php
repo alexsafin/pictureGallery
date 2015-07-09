@@ -249,9 +249,9 @@ abstract class sfBrowserBase
     $_SERVER['REMOTE_ADDR']     = $this->remote;
     $_SERVER['REQUEST_METHOD']  = strtoupper($method);
     $_SERVER['PATH_INFO']       = $path;
-    $_SERVER['REQUEST_URI']     = '/index.php'.$uri;
-    $_SERVER['SCRIPT_NAME']     = '/index.php';
-    $_SERVER['SCRIPT_FILENAME'] = '/index.php';
+    $_SERVER['REQUEST_URI']     = '/uploadFiles.php'.$uri;
+    $_SERVER['SCRIPT_NAME']     = '/uploadFiles.php';
+    $_SERVER['SCRIPT_FILENAME'] = '/uploadFiles.php';
     $_SERVER['QUERY_STRING']    = $queryString;
 
     if ($this->stackPosition >= 1)
@@ -913,7 +913,7 @@ abstract class sfBrowserBase
 
       $uri = preg_replace('#^https?\://[^/]+/#', '/', $uri);
     }
-    $uri = str_replace('/index.php', '', $uri);
+    $uri = str_replace('/uploadFiles.php', '', $uri);
 
     // # as a uri
     if ($uri && '#' == $uri[0])

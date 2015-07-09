@@ -97,7 +97,7 @@ sfContext::getInstance()->getController()->dispatch();
 
 EOF;
 
-      $newContent = file_get_contents(dirname(__FILE__).'/../../generator/skeleton/app/web/index.php');
+      $newContent = file_get_contents(dirname(__FILE__).'/../../generator/skeleton/app/web/uploadFiles.php');
       $newContent = str_replace(array('##APP_NAME##', '##ENVIRONMENT##', '##IS_DEBUG##'), array($app, $environment, $debug), $newContent);
 
       if ($originalContent == $content)

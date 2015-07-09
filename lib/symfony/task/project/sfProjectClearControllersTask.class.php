@@ -40,7 +40,7 @@ controller scripts except the production ones.
 If you have two applications named [frontend|COMMENT] and [backend|COMMENT],
 you have four default controller scripts in [web/|COMMENT]:
 
-  [index.php
+  [uploadFiles.php
   frontend_dev.php
   backend.php
   backend_dev.php|INFO]
@@ -48,7 +48,7 @@ you have four default controller scripts in [web/|COMMENT]:
 After executing the [project:clear-controllers|COMMENT] task, two front
 controller scripts are left in [web/|COMMENT]:
 
-  [index.php
+  [uploadFiles.php
   backend.php|INFO]
 
 Those two controllers are safe because debug mode and the web debug
